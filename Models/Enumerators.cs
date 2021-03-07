@@ -7,5 +7,6 @@ namespace PeopleBuyWebAPI.Models
 {
     public class Enumerators
     {
+        public enum AccessType { Física,Jurídica}
     }
 }
