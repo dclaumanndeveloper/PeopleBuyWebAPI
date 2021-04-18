@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PeopleBuyWebAPI.Data;
 using PeopleBuyWebAPI.Models;
+using System.Net.Http;
 
 namespace PeopleBuyWebAPI.Controllers
 {
@@ -98,6 +99,53 @@ namespace PeopleBuyWebAPI.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+        public JsonResult GetOffer(double alcance, double latitude, double longitude, int categoriaId, String buscanome, String key)
+        {
+            List<Offer> offers = new List<Offer>();
+            List<Offer> offerfiltred = new List<Offer>();
+            String chave = "v24w!7RarunEVC*A@7Za!UfATeTrac";
+            if (key.Equals(chave))
+            {
+
+                if (categoriaId == 0)
+                {
+                    if (buscanome != null)
+                    {
+                        offers = new List<Offer>(_context.Offer.Include(x => x.LegalPerson.Localization).Where(x => x.Name.Contains(buscanome) || x.Description.Contains(buscanome) && x.Active.Equals('S')).OrderBy(m => m.Price).ToList());
+                    }
+                    else
+                    {
+                        offers = new List<Offer>(_context.Offer.Include(x => x.LegalPerson.Localization).Where(x => x.Active.Equals('S')).OrderBy(m => m.Price).ToList());
+                    }
+                }
+                if (categoriaId != 0)
+                {
+                    if (buscanome != null)
+                    {
+                        offers = new List<Offer>(_context.Offer.Include(x => x.LegalPerson.Localization).Where(x => x.Category.ID == categoriaId && x.Name.Contains(buscanome) || x.Description.Contains(buscanome) && x.Active.Equals('S')).OrderBy(m => m.Price).ToList());
+                    }
+                    else
+                    {
+                        offers = new List<Offer>(_context.Offer.Include(x => x.LegalPerson.Localization).Where(x => x.Category.ID == categoriaId && x.Active.Equals('S')).OrderBy(m => m.Price).ToList());
+                    }
+                }
+
+                foreach (var offer in offers)
+                {
+                    double calculo = CalculationGeoCoding.Calculate(offer.LegalPerson.Localization.Latitude, offer.LegalPerson.Localization.Longitude, latitude, longitude);
+                    if (calculo <= alcance && calculo >= 0)
+                    {
+                        offerfiltred.Add(offer);
+                    }
+                }
+                JsonResult json = new JsonResult(offerfiltred);
+                return json;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private bool OfferExists(int id)
