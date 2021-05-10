@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleBuyWebAPI", "PeopleBuyWebAPI.csproj", "{7A0AE951-C9F5-49EA-ACE8-334731D6E8E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleBuyWebAPI", "PeopleBuyWebAPI.csproj", "{7A0AE951-C9F5-49EA-ACE8-334731D6E8E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleBuy.Application", "..\PeopleBuy.Application\PeopleBuy.Application.csproj", "{C51E8AA3-177D-47F9-8E0A-3CC6CB50512F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleBuy.Domain", "..\PeopleBuy.Domain\PeopleBuy.Domain.csproj", "{561515A6-F50B-423A-A10A-C4862EE5C431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleBuy.Infra.Data", "..\PeopleBuy.Infra.Data\PeopleBuy.Infra.Data.csproj", "{4F347BA1-EB99-45A4-92AA-2FD858A4A09D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleBuy.Infrastructure.IoC", "..\PeopleBuy.Infrastructure.IoC\PeopleBuy.Infrastructure.IoC.csproj", "{D68236CB-5CD3-4234-A5B4-54F6D939B1BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{7A0AE951-C9F5-49EA-ACE8-334731D6E8E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A0AE951-C9F5-49EA-ACE8-334731D6E8E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A0AE951-C9F5-49EA-ACE8-334731D6E8E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C51E8AA3-177D-47F9-8E0A-3CC6CB50512F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51E8AA3-177D-47F9-8E0A-3CC6CB50512F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51E8AA3-177D-47F9-8E0A-3CC6CB50512F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51E8AA3-177D-47F9-8E0A-3CC6CB50512F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561515A6-F50B-423A-A10A-C4862EE5C431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561515A6-F50B-423A-A10A-C4862EE5C431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561515A6-F50B-423A-A10A-C4862EE5C431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561515A6-F50B-423A-A10A-C4862EE5C431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F347BA1-EB99-45A4-92AA-2FD858A4A09D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F347BA1-EB99-45A4-92AA-2FD858A4A09D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F347BA1-EB99-45A4-92AA-2FD858A4A09D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F347BA1-EB99-45A4-92AA-2FD858A4A09D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D68236CB-5CD3-4234-A5B4-54F6D939B1BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D68236CB-5CD3-4234-A5B4-54F6D939B1BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D68236CB-5CD3-4234-A5B4-54F6D939B1BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D68236CB-5CD3-4234-A5B4-54F6D939B1BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
